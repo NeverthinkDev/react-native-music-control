@@ -218,6 +218,7 @@ public class MusicControlModule extends ReactContextBaseJavaModule implements Co
         String album = metadata.hasKey("album") ? metadata.getString("album") : null;
         String genre = metadata.hasKey("genre") ? metadata.getString("genre") : null;
         String description = metadata.hasKey("description") ? metadata.getString("description") : null;
+        String subtext = metadata.hasKey("subtext") ? metadata.getString("subtext") : null;
         String date = metadata.hasKey("date") ? metadata.getString("date") : null;
         long duration = metadata.hasKey("duration") ? (long)(metadata.getDouble("duration") * 1000) : 0;
         int notificationColor = metadata.hasKey("color") ? metadata.getInt("color") : NotificationCompat.COLOR_DEFAULT;
@@ -254,6 +255,7 @@ public class MusicControlModule extends ReactContextBaseJavaModule implements Co
         nb.setContentTitle(title);
         nb.setContentText(artist);
         nb.setContentInfo(album);
+        nb.setSubText(subtext);
         nb.setColor(notificationColor);
 
         notification.setCustomNotificationIcon(notificationIcon);
