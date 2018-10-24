@@ -257,6 +257,11 @@ public class MusicControlModule extends ReactContextBaseJavaModule implements Co
         nb.setContentInfo(album);
         nb.setSubText(subtext);
         nb.setColor(notificationColor);
+        nb.setColorized(true);
+        nb.setShowWhen(false); // Hide time of notification
+        nb.setStyle(new MediaStyle()
+                .setShowActionsInCompactView(new int[]{0, 1, 2})
+                .setMediaSession(session.getSessionToken()));
 
         notification.setCustomNotificationIcon(notificationIcon);
 
